@@ -12,6 +12,10 @@ public class PlayerController : MonoBehaviour
     private float nextFire = 0.5F;
     private float myTime = 0.0F;
 
+    private bool press = false;
+    public GameObject pointPre;
+    public List<GameObject> points = new List<GameObject>();
+
     void Start ()
     {
 		
@@ -27,6 +31,7 @@ public class PlayerController : MonoBehaviour
             transform.Translate(Vector3.right * tileSize);
             nextFire = nextFire - myTime;
             myTime = 0.0F;
+            press = true;
         }
         else if (Input.GetButtonDown("Down"))// && myTime > nextFire)
         {
@@ -34,6 +39,7 @@ public class PlayerController : MonoBehaviour
             transform.Translate(Vector3.down * tileSize);
             nextFire = nextFire - myTime;
             myTime = 0.0F;
+            press = true;
         }
         else if (Input.GetButtonDown("Up"))// && myTime > nextFire)
         {
@@ -41,6 +47,7 @@ public class PlayerController : MonoBehaviour
             transform.Translate(Vector3.up * tileSize);
             nextFire = nextFire - myTime;
             myTime = 0.0F;
+            press = true;
         }
 
 
@@ -50,7 +57,19 @@ public class PlayerController : MonoBehaviour
             transform.Translate(Vector3.left * tileSize);
             nextFire = nextFire - myTime;
             myTime = 0.0F;
+            press = true;
+        }
+
+        if (press)
+        {
+            GameObject point = (GameObject)Instantiate(pointPre, transform.position, transform.rotation);
+            points.Add(point);
+            press = false;
         }
     }
     
+   
+
+
+
 }

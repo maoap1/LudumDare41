@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     const int ID_DOWN = 2;
     const int ID_LEFT = 3;
 
+    private int last_direction = ID_RIGHT;
 
     public int tileSize = 100;
     public bool DEBUG = false;
@@ -20,11 +21,7 @@ public class PlayerController : MonoBehaviour
     public Text text;
     public int jidlo = 10;
     public bool move = false;
-
-    public float fireDelta = 0.5F;
-    private float nextFire = 0.5F;
-    private float myTime = 0.0F;
-
+    
     private Spawn spawn;
     private bool wait;
     //private bool press = false;
@@ -41,50 +38,43 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        myTime = myTime + Time.deltaTime;
-
         if (jidlo > 0)
         {
             wait = true;
 
-            if (Input.GetButtonDown("Right"))// && myTime > nextFire)
+            if (Input.GetButtonDown("Right"))
             {
-
+                jidlo--;
+                last_direction = ID_RIGHT;
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.right);
                 hit.collider.gameObject.GetComponent<WallController>().lives--;
-                //GameObject probe = GameObject.Find("Probe");
-                //probe.transform.Translate(Vector3.right * tileSize);
-
-                nextFire = myTime + fireDelta;
-                //transform.Translate(Vector3.right * tileSize);
-                nextFire = nextFire - myTime;
-                myTime = 0.0F;
-                //press = true;
             }
-            else if (Input.GetButtonDown("Down"))// && myTime > nextFire)
+            else if (Input.GetButtonDown("Down"))
             {
-                nextFire = myTime + fireDelta;
-                transform.Translate(Vector3.down * tileSize);
-                nextFire = nextFire - myTime;
-                myTime = 0.0F;
-                //press = true;
+                if (last_direction==ID_UP)
+                {
+                    return;
+                }
+                jidlo--;
+                last_direction = ID_DOWN;
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down);
+                hit.collider.gameObject.GetComponent<WallController>().lives--;
             }
-            else if (Input.GetButtonDown("Up"))// && myTime > nextFire)
+            else if (Input.GetButtonDown("Up"))
             {
-                nextFire = myTime + fireDelta;
-                transform.Translate(Vector3.up * tileSize);
-                nextFire = nextFire - myTime;
-                myTime = 0.0F;
-                //press = true;
+                if (last_direction == ID_DOWN)
+                {
+                    return;
+                }
+                jidlo--;
+                last_direction = ID_UP;
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.up);
+                hit.collider.gameObject.GetComponent<WallController>().lives--;
             }
 
-            else if (Input.GetButtonDown("Left") && DEBUG)// && myTime > nextFire)
+            else if (Input.GetButtonDown("Left") && DEBUG)
             {
-                nextFire = myTime + fireDelta;
                 transform.Translate(Vector3.left * tileSize);
-                nextFire = nextFire - myTime;
-                myTime = 0.0F;
-                //press = true;
             }
         }
         else
@@ -99,6 +89,18 @@ public class PlayerController : MonoBehaviour
         
         if (move)
         {
+            switch (last_direction)
+            {
+                case ID_RIGHT:
+                    transform.Translate(Vector3.right * tileSize);
+                    break;
+                case ID_UP:
+                    transform.Translate(Vector3.up * tileSize);
+                    break;
+                case ID_DOWN:
+                    transform.Translate(Vector3.down * tileSize);
+                    break;
+            }
             pozice = transform.position;
             pozice.z = -5;
             GameObject point = (GameObject)Instantiate(pointPre, pozice, transform.rotation);

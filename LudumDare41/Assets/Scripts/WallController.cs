@@ -16,6 +16,8 @@ public class WallController : MonoBehaviour {
 		if (lives <= 0)
         {
             Destroy(gameObject);
+            PlayerController playerScript = GameObject.Find("Player").GetComponent<PlayerController>();
+            playerScript.move = true;
         }
 	}
 

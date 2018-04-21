@@ -8,6 +8,7 @@ public class Follow : MonoBehaviour {
     public PlayerController playerControllerInst;
     public List<GameObject> kudy;
     public Vector3 smer;
+    public Quaternion rotace;
 
     public int rychlost = 100;
 
@@ -31,13 +32,22 @@ public class Follow : MonoBehaviour {
             vzdalenost.z = 0;
             smer = Vector3.Normalize(vzdalenost);
 
+            rotace = transform.rotation;
+            
+            if (smer.y == 0)
+                rotace.z = smer.x * 90;
+            else if (smer.x == 0)
+                rotace.z = 90 - smer.y * 90;
+
             transform.position -= smer;
+            transform.rotation = rotace;
 
             if (vzdalenost.magnitude < 1)
             {
                 kroky++;
             }
-                
+
+            
         }
      }
 }

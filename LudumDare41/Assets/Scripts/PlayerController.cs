@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool press = false;
     public GameObject pointPre;
     public List<GameObject> points = new List<GameObject>();
+    Vector3 pozice;
 
     void Start ()
     {
@@ -62,7 +63,9 @@ public class PlayerController : MonoBehaviour
 
         if (press)
         {
-            GameObject point = (GameObject)Instantiate(pointPre, transform.position, transform.rotation);
+            pozice = transform.position;
+            pozice.z = -5;
+            GameObject point = (GameObject)Instantiate(pointPre, pozice, transform.rotation);
             points.Add(point);
             press = false;
         }

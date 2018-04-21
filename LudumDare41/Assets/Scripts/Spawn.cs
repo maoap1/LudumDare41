@@ -9,6 +9,8 @@ public class Spawn : MonoBehaviour {
 		
 	}
 
+    public bool bol;
+
     public GameObject fish;
 
     public List<GameObject> fishes = new List<GameObject>(); 

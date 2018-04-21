@@ -16,6 +16,7 @@
 		{
 			CGPROGRAM
 			#pragma vertex vert
+			#pragma fragment frag
 			#include "UnityCG.cginc"
 
 			struct appdata
@@ -32,11 +33,11 @@
 			};
 
 			sampler2D _NoiseTex0;
-			float4 _NoiseTex0_SD;
+			float4 _NoiseTex0_ST;
 			sampler2D _NoiseTex1;
-			float4 _NoiseTex1_SD;
+			float4 _NoiseTex1_ST;
 			fixed4 _Color0;
-			fixed4_Color1;
+			fixed4 _Color1;
 			
 			v2f vert (appdata v)
 			{

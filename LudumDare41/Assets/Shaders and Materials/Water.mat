@@ -40,7 +40,7 @@ Material:
     - _DistortionStrength: 0.31
     - _EdgeHardness: 100
     - _EdgeOffset: 100
-    - _Speed: 1
+    - _Speed: 0.5
     m_Colors:
     - _Color0: {r: 0.11353808, g: 0.1435538, b: 0.7352941, a: 1}
     - _Color1: {r: 0.061310556, g: 0.8190715, b: 0.9264706, a: 1}

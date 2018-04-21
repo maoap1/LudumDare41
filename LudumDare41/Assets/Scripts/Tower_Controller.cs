@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Twer_Controller : MonoBehaviour {
+public class Tower_Controller : MonoBehaviour {
 
     public int dostrel;
     private Spawn spawn;

@@ -12,7 +12,8 @@ public class Spawn : MonoBehaviour {
     public GameObject fish;
 
     public List<GameObject> fishes = new List<GameObject>(); 
-
+    public int pocet_ryb = 5;
+    public int jak_rychle_za_sebou = 5;
     public bool Spawning = false;
 
 	// Update is called once per frame
@@ -22,7 +23,21 @@ public class Spawn : MonoBehaviour {
             Vector3 pozice = new Vector3(-750, -250, -8);
             GameObject spawnfish = (GameObject)Instantiate(fish, pozice, transform.rotation);
             fishes.Add(spawnfish);
-            Spawning = false;
+            StartCoroutine(waiter());
+            
         }
-	}
+
+        
+    }
+    IEnumerator waiter()
+        {
+            Spawning = false;
+            yield return new WaitForSeconds(jak_rychle_za_sebou);
+            pocet_ryb--;
+            if (pocet_ryb != 0)
+                Spawning = true;
+            else
+                pocet_ryb = 5;
+
+        }
 }

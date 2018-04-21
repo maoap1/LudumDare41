@@ -10,6 +10,7 @@ public class Follow : MonoBehaviour {
     public Vector3 smer = new Vector3(0, 0, 0);
     public Quaternion rotace;
     public Vector3 predchozi_smer = new Vector3(1,0,0);
+    public int pocet_zivotu = 10;
 
     public int rychlost = 100;
 
@@ -18,6 +19,7 @@ public class Follow : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         kroky = 0;
+        playerControllerInst = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     float o_kolik;
@@ -25,7 +27,7 @@ public class Follow : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        playerControllerInst = GameObject.Find("Player").GetComponent<PlayerController>();
+        
         kudy = playerControllerInst.points;
 
         if (kroky <= kudy.Count)

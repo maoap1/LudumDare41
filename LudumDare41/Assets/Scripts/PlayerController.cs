@@ -76,6 +76,7 @@ public class PlayerController : MonoBehaviour
             {
                 transform.Translate(Vector3.left * tileSize);
             }
+            text.text = "Food: " + jidlo.ToString();
         }
         else
         {

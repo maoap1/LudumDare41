@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4070126870209342}
   - component: {fileID: 212237653161780884}
+  - component: {fileID: 114814475888899302}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -40,6 +41,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114814475888899302
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1503676740423100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad0b7d748c2af441b68aa1df2201e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vzdalenost: {x: 0, y: 0, z: 0}
+  max: 0
+  ztrata: 0
 --- !u!212 &212237653161780884
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -16,17 +16,26 @@ public class Move : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        
+    }
+
+    void FixedUpdate()
+    {
         MoveAxeHorizontal = Input.GetAxis("Horizontal");
+
 
         if (MoveAxeHorizontal == 0)
             MoveAxeVertical = Input.GetAxis("Vertical");
 
+
         if (MoveAxeHorizontal < 0) MoveAxeHorizontal = 0;
+        
+
 
         Vector3 pohyb = new Vector3(MoveAxeHorizontal, MoveAxeVertical, 0);
 
         transform.position += pohyb * velikost_policka;
-    }
 
+    }
     
 }

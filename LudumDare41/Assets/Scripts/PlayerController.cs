@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     void Start ()
     {
-		
+        points.Add(pointPre);
 	}
 
     void Update()

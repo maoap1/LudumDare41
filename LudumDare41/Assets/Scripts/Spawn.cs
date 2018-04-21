@@ -19,7 +19,7 @@ public class Spawn : MonoBehaviour {
 	void Update () {
 		if (Spawning)
         {
-            Vector3 pozice = new Vector3(-650, -250, -5);
+            Vector3 pozice = new Vector3(-750, -250, -8);
             GameObject spawnfish = (GameObject)Instantiate(fish, pozice, transform.rotation);
             fishes.Add(spawnfish);
             Spawning = false;

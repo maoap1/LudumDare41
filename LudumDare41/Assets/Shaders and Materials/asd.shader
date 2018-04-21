@@ -1,0 +1,61 @@
+﻿Shader "Unlit/asd"
+{
+	Properties
+	{
+		_MainTex("Main Textture", 2D) = "white" {}
+	}
+	SubShader
+	{
+		Tags { "RenderType"="Opaque" }
+		LOD 100
+
+		Pass
+		{
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+			// make fog work
+			#pragma multi_compile_fog
+			
+			#include "UnityCG.cginc"
+
+			struct appdata
+			{
+				float4 vertex : POSITION;
+				float2 uv : TEXCOORD0; // tzn ma do uv posilat texturove koordinaty
+				/*
+				Na psani shaderu pouziva ShaderLab
+
+
+				shadery: nejdrive se pouzije vertex shader a pak fragment shader
+				*/
+			};
+
+			struct v2f
+			{
+				float2 uv : TEXCOORD0; // obdobne
+				float4 vertex : SV_POSITION;
+			};
+
+			sampler2D _MainTex;
+
+
+			float4 _MainTex_ST;
+			
+			v2f vert (appdata v)
+			{
+				v2f o;
+				o.vertex = UnityObjectToClipPos(v.vertex);
+				o.uv = v.uv;
+				return o;
+			}
+			
+			fixed4 frag (v2f i) : SV_Target
+			{
+				fixed4 color = tex2D(_MainTex,i.uv);
+				return fixed4(1.0,0.0,0.0,1.0); // red
+			}
+			ENDCG
+		}
+	}
+}

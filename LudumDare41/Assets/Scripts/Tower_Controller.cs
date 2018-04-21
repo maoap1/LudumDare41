@@ -40,7 +40,7 @@ public class Tower_Controller : MonoBehaviour
         for (int i = 0; i < ryby.Count; i++)
         {
             pozice = transform.position;
-            pozice.y -= 20;
+            pozice.y += 30;
             pozice.z = -9;
             vzdalenost = transform.position - ryby[i].transform.position;
             vzdalenost.z = 0;

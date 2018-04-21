@@ -80,7 +80,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 3
-  srdceint: {fileID: 0}
+  maxlives: 3
+  srdceint: {fileID: 1402857813691634, guid: 0ee56565c34f2ff44a24e7563c12327e, type: 2}
+  srdicka: []
 --- !u!114 &114573983073013798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -92,12 +94,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecf9fe5674878949ad99668ebad4637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dostrel: 200000
+  dostrel: 350
   ryby: []
   vzdalenost: {x: 0, y: 0, z: 0}
   strelaint: {fileID: 1503676740423100, guid: 1e553c53d6508bd468a5c3c472eef206, type: 2}
   pozice: {x: 0, y: 0, z: 0}
   strilej: 1
+  rychlost_strelby: 3
 --- !u!212 &212150335038968312
 SpriteRenderer:
   m_ObjectHideFlags: 1

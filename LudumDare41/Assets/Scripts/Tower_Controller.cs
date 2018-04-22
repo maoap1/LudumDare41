@@ -37,7 +37,7 @@ public class Tower_Controller : MonoBehaviour
     void rybolov()
     {
         ryby = GameObject.Find("Spawner").GetComponent<Spawn>().fishes;
-
+        
         for (int i = 0; i < ryby.Count; i++)
         {
             pozice = transform.position;

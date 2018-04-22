@@ -98,6 +98,7 @@ MonoBehaviour:
   rychlost_strelby: 3
   strelaint: {fileID: 1503676740423100, guid: 1e553c53d6508bd468a5c3c472eef206, type: 2}
   posunuti: 30
+  Fire: {fileID: 82378119957343324, guid: bbab4e4b6319de3458e92dfb24f59bc0, type: 2}
 --- !u!212 &212150335038968312
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,13 +17,14 @@ public class PlayerController : MonoBehaviour
 
     public int tileSize = 100;
 
+    public GameObject textPro;
+    private TextMeshProUGUI textmeshPro;
     public Text text;
     public int jidlo = 10;
     public bool move = false;
     
     private Spawn spawn;
     private bool wait;
-    //private bool press = false;
     public GameObject pointPre;
     public List<GameObject> points = new List<GameObject>();
     Vector3 pozice;
@@ -39,6 +40,8 @@ public class PlayerController : MonoBehaviour
     void Start ()
     {
         points.Add(pointPre);
+        textmeshPro = textPro.GetComponent<TextMeshProUGUI>();
+        textmeshPro.SetText(jidlo.ToString());
         text.text = jidlo.ToString();
         spawn = GameObject.Find("Spawner").GetComponent<Spawn>();
         portal = GameObject.Find("Portal");
@@ -89,6 +92,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
             text.text = jidlo.ToString();
+            textmeshPro.SetText(jidlo.ToString());
         }
         else
         {

@@ -80,7 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 1
   maxlives: 1
-  srdceint: {fileID: 1402857813691634, guid: 0ee56565c34f2ff44a24e7563c12327e, type: 2}
+  srdceint: {fileID: 1392350352745656, guid: 0ee56565c34f2ff44a24e7563c12327e, type: 2}
   srdicka: []
 --- !u!212 &212940384092825138
 SpriteRenderer:

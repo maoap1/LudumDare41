@@ -81,7 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 3
   maxlives: 3
-  srdceint: {fileID: 1402857813691634, guid: 0ee56565c34f2ff44a24e7563c12327e, type: 2}
+  srdceint: {fileID: 1392350352745656, guid: 0ee56565c34f2ff44a24e7563c12327e, type: 2}
   srdicka: []
 --- !u!114 &114573983073013798
 MonoBehaviour:

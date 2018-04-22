@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     const int ID_LEFT = 3;
 
     private int last_direction = ID_RIGHT;
+    private int previous_direction = ID_RIGHT;
+
 
     public int tileSize = 100;
 
@@ -63,7 +65,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (Input.GetButtonDown("Down"))
             {
-                if (last_direction==ID_UP)
+                if (previous_direction == ID_UP)
                 {
                     return;
                 }
@@ -77,7 +79,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (Input.GetButtonDown("Up"))
             {
-                if (last_direction == ID_DOWN)
+                if (previous_direction == ID_DOWN)
                 {
                     return;
                 }
@@ -117,14 +119,18 @@ public class PlayerController : MonoBehaviour
             switch (last_direction)
             {
                 case ID_RIGHT:
+                    previous_direction = ID_RIGHT;
                     transform.Translate(Vector3.right * tileSize);
                     break;
                 case ID_UP:
+                    previous_direction = ID_UP;
                     transform.Translate(Vector3.up * tileSize);
                     break;
                 case ID_DOWN:
+                    previous_direction = ID_DOWN;
                     transform.Translate(Vector3.down * tileSize);
                     break;
+
             }
             pozice = transform.position;
             pozice.z = -5;

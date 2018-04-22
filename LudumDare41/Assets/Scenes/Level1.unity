@@ -631,7 +631,7 @@ MonoBehaviour:
   txt1: {fileID: 803924211}
   txt2: {fileID: 388931603}
   txt0: {fileID: 2022797987}
-  prepinac: 0
+  prepinac: 1
   str: []
   wall: {fileID: 1269788569980736, guid: fcda04c1cee33ae44abfa4feb69ab033, type: 2}
   wall2: {fileID: 1528343370308002, guid: 31b67374668c0914a881d1ea33bd7ff8, type: 2}

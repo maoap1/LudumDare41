@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -145,12 +146,12 @@ public class PlayerController : MonoBehaviour
     
    void Smrt()
     {
-        Debug.Break();
+        SceneManager.LoadScene("GameOverScene");
     }
 
     void Vitezstvi()
     {
-        Debug.Break();
+        SceneManager.LoadScene("WinningScene");
     }
 
 

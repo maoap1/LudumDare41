@@ -44,19 +44,19 @@ public class Load : MonoBehaviour {
                 switch (str[i][j])
                 {
                     case 'w':
-                        GameObject nov = GameObject.Instantiate(wall, pozice, transform.rotation);
+                        Instantiate(wall, pozice, transform.rotation);
                         break;
                     case 'x':
-                        GameObject nov2 = GameObject.Instantiate(wall2, pozice, transform.rotation);
+                        Instantiate(wall2, pozice, transform.rotation);
                         break;
                     case 'y':
-                        GameObject nov3 = GameObject.Instantiate(wall3, pozice, transform.rotation);
+                       Instantiate(wall3, pozice, transform.rotation);
                         break;
                     case 't':
-                        GameObject nova = GameObject.Instantiate(tower, pozice, transform.rotation);
+                       Instantiate(tower, pozice, transform.rotation);
                         break;
                     case 'd':
-                        GameObject novy = GameObject.Instantiate(dragon, pozice, transform.rotation);
+                        Instantiate(dragon, pozice, transform.rotation);
                         break;
                 }
             }

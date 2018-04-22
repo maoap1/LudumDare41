@@ -14,7 +14,6 @@ public class Tower_Controller : MonoBehaviour
     private Vector3 pozice;
     private bool strilej = true;
     public int posunuti;
-    
 
     // Use this for initialization
     void Start()
@@ -50,7 +49,6 @@ public class Tower_Controller : MonoBehaviour
             if (vzdalenost.magnitude < dostrel)
             {
                 GameObject strela = (GameObject)Instantiate(strelaint, pozice, transform.rotation);
-
                 strela.GetComponent<Fireball_Controller>().dosah = dostrel;
 
                 if (rychlost_strelby > 0) StartCoroutine(waiter());

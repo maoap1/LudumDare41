@@ -8,6 +8,8 @@ public class Load : MonoBehaviour {
     public Text txt;
     public string[] str;
     public GameObject wall;
+    public GameObject wall2;
+    public GameObject wall3;
     public GameObject tower;
     public GameObject dragon;
 
@@ -28,6 +30,12 @@ public class Load : MonoBehaviour {
                 {
                     case 'w':
                         GameObject nov = GameObject.Instantiate(wall, pozice, transform.rotation);
+                        break;
+                    case 'x':
+                        GameObject nov2 = GameObject.Instantiate(wall2, pozice, transform.rotation);
+                        break;
+                    case 'y':
+                        GameObject nov3 = GameObject.Instantiate(wall3, pozice, transform.rotation);
                         break;
                     case 't':
                         GameObject nova = GameObject.Instantiate(tower, pozice, transform.rotation);

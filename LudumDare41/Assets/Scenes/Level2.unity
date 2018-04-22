@@ -393,7 +393,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "nnytyxdxwtytyyt\r\ntwyxwtwxwyyyte\r\ntxtdyxydxwyyyt\r\nxwyxyxtwyxdywt\r\ndxwtxwxdwwtwty\r\nyytxwxwyxxwyxw\r\npwxdxdytywdtyt\r\nwdxdwttxytwxdt"
+  m_Text: "nnytyxdxwtytyyt\r\ntwyxwtwxwyyyte\r\ntxtdyxydxwyyyt\r\nxwyxyxtwyxdywt\r\ndxwtxwxdwwtwty\r\nyytxwxwyxxwyxw\r\npwxdxdytywdtyt\r\nwdwdwttxytwxdt"
 --- !u!222 &388931604
 CanvasRenderer:
   m_ObjectHideFlags: 0

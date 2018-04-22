@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
 
     public GameObject textPro;
     private TextMeshProUGUI textmeshPro;
-    public Text text;
     public int jidlo = 10;
     public bool move = false;
     
@@ -34,7 +33,6 @@ public class PlayerController : MonoBehaviour
     public int o_kolik_jidlo = 2;
     public float o_kolik_objevonani = 0.5f;
     public bool mrtvy;
-    SpriteRenderer renderer;
     GameObject portal;
 
     void Start ()
@@ -42,7 +40,6 @@ public class PlayerController : MonoBehaviour
         points.Add(pointPre);
         textmeshPro = textPro.GetComponent<TextMeshProUGUI>();
         textmeshPro.SetText(jidlo.ToString());
-        text.text = jidlo.ToString();
         spawn = GameObject.Find("Spawner").GetComponent<Spawn>();
         portal = GameObject.Find("Portal");
 	}
@@ -91,7 +88,6 @@ public class PlayerController : MonoBehaviour
                     jidlo--;
                 }
             }
-            text.text = jidlo.ToString();
             textmeshPro.SetText(jidlo.ToString());
         }
         else
@@ -149,8 +145,6 @@ public class PlayerController : MonoBehaviour
     
    void Smrt()
     {
-        renderer = GetComponent<SpriteRenderer>();
-        renderer.enabled = false;
         Debug.Break();
     }
 

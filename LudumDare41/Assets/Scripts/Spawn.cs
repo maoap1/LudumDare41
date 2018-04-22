@@ -2,33 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawn : MonoBehaviour {
+public class Spawn : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    // Use this for initialization
+    void Start()
+    {
+
+    }
 
     public GameObject fish;
 
-    public List<GameObject> fishes = new List<GameObject>(); 
+    public List<GameObject> fishes = new List<GameObject>();
     public int pocet_ryb = 5;
-    public int jak_rychle_za_sebou = 5;
+    public float jak_rychle_za_sebou = 5;
     public bool Spawning = false;
     public bool vsechny = false;
+    public float zivoty = 6;
 
-	// Update is called once per frame
-	void Update () {
-		if (Spawning)
+    // Update is called once per frame
+    void Update()
+    {
+        if (Spawning)
         {
-            Vector3 pozice = new Vector3(-800, -250, -8);
+            Vector3 pozice = new Vector3(-750, -250, -8);
             GameObject spawnfish = (GameObject)Instantiate(fish, pozice, transform.rotation);
+            spawnfish.GetComponent<Follow>().pocet_zivotu = zivoty;
             fishes.Add(spawnfish);
             StartCoroutine(waiter());
-            
+
         }
 
-        
     }
     IEnumerator waiter()
     {
@@ -37,7 +41,7 @@ public class Spawn : MonoBehaviour {
         pocet_ryb--;
         if (pocet_ryb != 0)
         {
-           Spawning = true;
+            Spawning = true;
         }
         else
         {
@@ -46,4 +50,5 @@ public class Spawn : MonoBehaviour {
         }
 
     }
+    
 }

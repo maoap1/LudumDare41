@@ -43,6 +43,7 @@ public class Fireball_Controller : MonoBehaviour
         }
     }
 
+    Vector3 otoceni = new Vector3(0,180,0);
     // Update is called once per frame
     void Update()
     {
@@ -69,8 +70,11 @@ public class Fireball_Controller : MonoBehaviour
                     {
                         ryby.Remove(ryba);
                         Destroy(ryba);
+                        
+                        
                     }
                 }
+                
                 Destroy(gameObject);
             }
 

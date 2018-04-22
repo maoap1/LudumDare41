@@ -6,7 +6,7 @@ public class Follow : MonoBehaviour {
     private int kroky = 0;
     public PlayerController playerControllerInst;
     private List<GameObject> kudy;
-    private Vector3 smer = new Vector3(0, 0, 0);
+    public Vector3 smer = new Vector3(0, 0, 0);
     private Quaternion rotace;
     public float pocet_zivotu = 10;
 
@@ -52,12 +52,12 @@ public class Follow : MonoBehaviour {
             playerControllerInst.mrtvy = true;
         }
 
-        if (smer.y == 1) o_kolik = 90;
-        if (smer.y == -1) o_kolik = -90;
+        if (smer.y == 1) o_kolik = -90;
+        if (smer.y == -1) o_kolik = 90;
         if (smer.x == 1) o_kolik = 180;
         if (smer.x == -1) o_kolik = 0;
 
-        Quaternion target = Quaternion.Euler(0, 180, o_kolik);
+        Quaternion target = Quaternion.Euler(0, 0, o_kolik);
         
         transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * 5.0f);
 

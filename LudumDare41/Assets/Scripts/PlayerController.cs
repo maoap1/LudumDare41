@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
     private int last_direction = ID_RIGHT;
 
     public int tileSize = 100;
-    public bool DEBUG = false;
 
     public Text text;
     public int jidlo = 10;
@@ -51,10 +50,13 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetButtonDown("Right"))
             {
-                jidlo--;
                 last_direction = ID_RIGHT;
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.right);
-                hit.collider.gameObject.GetComponent<WallController>().lives--;
+                if (hit.collider != null)
+                {
+                    hit.collider.gameObject.GetComponent<WallController>().lives--;
+                    jidlo--;
+                }
             }
             else if (Input.GetButtonDown("Down"))
             {
@@ -62,10 +64,13 @@ public class PlayerController : MonoBehaviour
                 {
                     return;
                 }
-                jidlo--;
                 last_direction = ID_DOWN;
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down);
-                hit.collider.gameObject.GetComponent<WallController>().lives--;
+                if (hit.collider != null)
+                {
+                    hit.collider.gameObject.GetComponent<WallController>().lives--;
+                    jidlo--;
+                }
             }
             else if (Input.GetButtonDown("Up"))
             {
@@ -73,15 +78,13 @@ public class PlayerController : MonoBehaviour
                 {
                     return;
                 }
-                jidlo--;
                 last_direction = ID_UP;
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.up);
-                hit.collider.gameObject.GetComponent<WallController>().lives--;
-            }
-
-            else if (Input.GetButtonDown("Left") && DEBUG)
-            {
-                transform.Translate(Vector3.left * tileSize);
+                if (hit.collider != null)
+                {
+                    hit.collider.gameObject.GetComponent<WallController>().lives--;
+                    jidlo--;
+                }
             }
             text.text = "Food: " + jidlo.ToString();
         }

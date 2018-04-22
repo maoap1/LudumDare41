@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Portal
-  m_Shader: {fileID: 4800000, guid: b8c3bc1177fe9b240b76b2671c9fcc9f, type: 3}
+  m_Shader: {fileID: 4800000, guid: 09515bedf009a7e40aef84462b45b2f4, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -67,7 +67,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DistortionSpeed: 1
-    - _DistortionStrength: 1
+    - _DistortionStrength: 2.4
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -76,9 +76,10 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _Radius: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 2
+    - _Speed: 5
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1

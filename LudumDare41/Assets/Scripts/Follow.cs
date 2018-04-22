@@ -8,15 +8,15 @@ public class Follow : MonoBehaviour {
     public List<GameObject> kudy;
     public Vector3 smer = new Vector3(0, 0, 0);
     public Quaternion rotace;
-    public Vector3 predchozi_smer = new Vector3(1,0,0);
     public float pocet_zivotu = 10;
 
     public int rychlost = 100;
 
     public Vector3 vzdalenost = new Vector3(0, 0, 0);
+    public Vector3 vzdalenost_od_playera = new Vector3(0, 0, 0);
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         kroky = 0;
         playerControllerInst = GameObject.Find("Player").GetComponent<PlayerController>();
     }
@@ -43,6 +43,13 @@ public class Follow : MonoBehaviour {
                 kroky++;
                 
             }
+        }
+
+        vzdalenost_od_playera = transform.position - playerControllerInst.transform.position;
+        vzdalenost_od_playera.z = 0;
+        if (vzdalenost_od_playera.magnitude < 20)
+        {
+            playerControllerInst.mrtvy = true;
         }
 
         if (smer.y == 1) o_kolik = 90;

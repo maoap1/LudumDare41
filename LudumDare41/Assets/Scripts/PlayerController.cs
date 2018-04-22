@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
     public int o_kolik_pocet = 1;
     public int o_kolik_jidlo = 2;
     public int o_kolik_objevonani = 2;
+    public bool mrtvy;
+    SpriteRenderer renderer;
 
     void Start ()
     {
@@ -122,9 +124,19 @@ public class PlayerController : MonoBehaviour
             points.Add(point);
             move = false;
         }
+
+        if (mrtvy)
+        {
+            Smrt();
+        }
     }
     
-   
+   void Smrt()
+    {
+        renderer = GetComponent<SpriteRenderer>();
+        renderer.enabled = false;
+        Debug.Break();
+    }
 
 
 

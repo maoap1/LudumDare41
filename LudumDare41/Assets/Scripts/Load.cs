@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class Load : MonoBehaviour {
 
-    public Text txt;
+    public Text txt1;
+    public Text txt2;
+    public Text txt0;
+    public int prepinac = 0;
     public string[] str;
     public GameObject wall;
     public GameObject wall2;
@@ -18,7 +21,19 @@ public class Load : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        str = txt.text.Split('\n');
+        switch (prepinac)
+        {
+            case 0:
+                str = txt0.text.Split('\n');
+                break;
+            case 1:
+                str = txt1.text.Split('\n');
+                break;
+            case 2:
+                str = txt2.text.Split('\n');
+                break;
+           ;
+        }
         for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 14; j++)

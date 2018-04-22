@@ -71,7 +71,6 @@ public class Fireball_Controller : MonoBehaviour
                         ryby.Remove(ryba);
                         Destroy(ryba);
                         
-                        
                     }
                 }
                 

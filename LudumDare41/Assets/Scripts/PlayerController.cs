@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
             }
             if (spawn.fishes.Count == 0 && spawn.vsechny)
             {
-                jidlo += pocet_ryb;
+                jidlo = pocet_ryb;
                 pocet_ryb += o_kolik_pocet;
                 spawn.zivoty += 2.5f;
                 if (objevovani_ryb > o_kolik_objevonani) objevovani_ryb -= o_kolik_objevonani;
@@ -131,6 +131,7 @@ public class PlayerController : MonoBehaviour
             points.Add(point);
             move = false;
         }
+
 
         if (mrtvy)
         {

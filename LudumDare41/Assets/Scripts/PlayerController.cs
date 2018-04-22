@@ -34,12 +34,14 @@ public class PlayerController : MonoBehaviour
     public int o_kolik_objevonani = 2;
     public bool mrtvy;
     SpriteRenderer renderer;
+    GameObject portal;
 
     void Start ()
     {
         points.Add(pointPre);
         text.text = "Food: " + jidlo.ToString();
         spawn = GameObject.Find("Spawner").GetComponent<Spawn>();
+        portal = GameObject.Find("Portal");
 	}
 
     void Update()
@@ -132,12 +134,21 @@ public class PlayerController : MonoBehaviour
         {
             Smrt();
         }
+        if (transform.position == portal.transform.position)
+        {
+            Vitezstvi();
+        }
     }
     
    void Smrt()
     {
         renderer = GetComponent<SpriteRenderer>();
         renderer.enabled = false;
+        Debug.Break();
+    }
+
+    void Vitezstvi()
+    {
         Debug.Break();
     }
 

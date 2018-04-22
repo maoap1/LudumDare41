@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Follow : MonoBehaviour {
-    public int kroky = 0;
+    private int kroky = 0;
     public PlayerController playerControllerInst;
-    public List<GameObject> kudy;
-    public Vector3 smer = new Vector3(0, 0, 0);
-    public Quaternion rotace;
+    private List<GameObject> kudy;
+    private Vector3 smer = new Vector3(0, 0, 0);
+    private Quaternion rotace;
     public float pocet_zivotu = 10;
 
     public int rychlost = 100;
 
-    public Vector3 vzdalenost = new Vector3(0, 0, 0);
-    public Vector3 vzdalenost_od_playera = new Vector3(0, 0, 0);
+    private Vector3 vzdalenost = new Vector3(0, 0, 0);
+    private Vector3 vzdalenost_od_playera = new Vector3(0, 0, 0);
 
     // Use this for initialization
     void Start () {

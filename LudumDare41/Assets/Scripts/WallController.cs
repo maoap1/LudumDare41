@@ -37,8 +37,11 @@ public class WallController : MonoBehaviour {
     {
         if (maxlives == PORTAL_IDENT)
         {
-            PlayerController playerScript = GameObject.Find("Player").GetComponent<PlayerController>();
-            playerScript.move = true;
+            if ((lives < maxlives))
+            {
+                PlayerController playerScript = GameObject.Find("Player").GetComponent<PlayerController>();
+                playerScript.move = true;
+            }
         }
         else
         {

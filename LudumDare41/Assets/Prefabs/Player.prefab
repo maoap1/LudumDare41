@@ -54,9 +54,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileSize: 100
   DEBUG: 1
-  fireDelta: 0.5
+  text: {fileID: 0}
+  jidlo: 10
+  move: 0
   pointPre: {fileID: 0}
   points: []
+  pocet_ryb: 3
+  objevovani_ryb: 6
+  o_kolik_pocet: 1
+  o_kolik_jidlo: 2
+  o_kolik_objevonani: 2
 --- !u!212 &212114086163290532
 SpriteRenderer:
   m_ObjectHideFlags: 1

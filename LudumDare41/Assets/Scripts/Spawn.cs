@@ -15,6 +15,7 @@ public class Spawn : MonoBehaviour {
     public int pocet_ryb = 5;
     public int jak_rychle_za_sebou = 5;
     public bool Spawning = false;
+    public bool vsechny = false;
 
 	// Update is called once per frame
 	void Update () {
@@ -30,14 +31,19 @@ public class Spawn : MonoBehaviour {
         
     }
     IEnumerator waiter()
+    {
+        Spawning = false;
+        yield return new WaitForSeconds(jak_rychle_za_sebou);
+        pocet_ryb--;
+        if (pocet_ryb != 0)
         {
-            Spawning = false;
-            yield return new WaitForSeconds(jak_rychle_za_sebou);
-            pocet_ryb--;
-            if (pocet_ryb != 0)
-                Spawning = true;
-            else
-                pocet_ryb = 5;
-
+           Spawning = true;
         }
+        else
+        {
+            vsechny = true;
+            pocet_ryb = 5;
+        }
+
+    }
 }

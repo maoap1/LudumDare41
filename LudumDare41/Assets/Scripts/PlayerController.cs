@@ -28,6 +28,11 @@ public class PlayerController : MonoBehaviour
     public GameObject pointPre;
     public List<GameObject> points = new List<GameObject>();
     Vector3 pozice;
+    public int pocet_ryb = 3;
+    public int objevovani_ryb = 6;
+    public int o_kolik_pocet = 1;
+    public int o_kolik_jidlo = 2;
+    public int o_kolik_objevonani = 2;
 
     void Start ()
     {
@@ -82,8 +87,17 @@ public class PlayerController : MonoBehaviour
         {
             if(wait)
             {
+                spawn.pocet_ryb = pocet_ryb;
+                spawn.jak_rychle_za_sebou = objevovani_ryb;
+                spawn.vsechny = false;
                 spawn.Spawning = true;
                 wait = false;
+            }
+            if (spawn.fishes.Count == 0 && spawn.vsechny)
+            {
+                jidlo += o_kolik_jidlo;
+                pocet_ryb += o_kolik_pocet;
+                if (objevovani_ryb > o_kolik_objevonani) objevovani_ryb -= o_kolik_objevonani;
             }
         }
         

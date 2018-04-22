@@ -9,64 +9,75 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1448440698595598}
+  m_RootGameObject: {fileID: 1264675208657506}
   m_IsPrefabParent: 1
---- !u!1 &1448440698595598
+--- !u!1 &1264675208657506
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4292706569905400}
-  - component: {fileID: 212789986598093246}
-  - component: {fileID: 114188086174251008}
+  - component: {fileID: 4889298179980494}
+  - component: {fileID: 212458330789125160}
+  - component: {fileID: 114542453013287572}
+  - component: {fileID: 114679378674106744}
   m_Layer: 0
-  m_Name: Fish
+  m_Name: TowerDragon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4292706569905400
+--- !u!4 &4889298179980494
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1448440698595598}
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0}
+  m_GameObject: {fileID: 1264675208657506}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -172, y: 12, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 180}
---- !u!114 &114188086174251008
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114542453013287572
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1448440698595598}
+  m_GameObject: {fileID: 1264675208657506}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70326ee1e765cd647bae5f4558bf7be3, type: 3}
+  m_Script: {fileID: 11500000, guid: ea972c49f5a45f845bb3623bc44bea53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kroky: 0
-  playerControllerInst: {fileID: 0}
-  kudy: []
-  smer: {x: 0, y: 0, z: 0}
-  rotace: {x: 0, y: 0, z: 0, w: 0}
-  predchozi_smer: {x: 1, y: 0, z: 0}
-  pocet_zivotu: 10
-  rychlost: 100
-  vzdalenost: {x: 0, y: 0, z: 0}
---- !u!212 &212789986598093246
+  lives: 3
+  maxlives: 3
+  srdceint: {fileID: 1402857813691634, guid: 0ee56565c34f2ff44a24e7563c12327e, type: 2}
+  srdicka: []
+--- !u!114 &114679378674106744
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1264675208657506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ecf9fe5674878949ad99668ebad4637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dostrel: 125
+  rychlost_strelby: 0
+  strelaint: {fileID: 1191468388042424, guid: b328cec8ec1c76d4eaf7c2607178d497, type: 2}
+  posunuti: 0
+--- !u!212 &212458330789125160
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1448440698595598}
+  m_GameObject: {fileID: 1264675208657506}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -95,12 +106,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d1de0e8640b922945a3ed53e611cfc9e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9f19e1a85dc85834da4bc099fcaf1f7b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 495.80002, y: 495.80002}
+  m_Size: {x: 5, y: 5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

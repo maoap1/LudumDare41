@@ -95,12 +95,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dostrel: 350
-  ryby: []
-  vzdalenost: {x: 0, y: 0, z: 0}
-  strelaint: {fileID: 1503676740423100, guid: 1e553c53d6508bd468a5c3c472eef206, type: 2}
-  pozice: {x: 0, y: 0, z: 0}
-  strilej: 1
   rychlost_strelby: 3
+  strelaint: {fileID: 1503676740423100, guid: 1e553c53d6508bd468a5c3c472eef206, type: 2}
+  posunuti: 30
 --- !u!212 &212150335038968312
 SpriteRenderer:
   m_ObjectHideFlags: 1

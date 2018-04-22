@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Follow : MonoBehaviour {
     public int kroky = 0;
-    public GameObject player;
     public PlayerController playerControllerInst;
     public List<GameObject> kudy;
     public Vector3 smer = new Vector3(0, 0, 0);
     public Quaternion rotace;
     public Vector3 predchozi_smer = new Vector3(1,0,0);
-    public int pocet_zivotu = 10;
+    public float pocet_zivotu = 10;
 
     public int rychlost = 100;
 

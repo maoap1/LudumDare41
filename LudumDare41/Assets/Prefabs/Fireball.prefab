@@ -54,7 +54,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vzdalenost: {x: 0, y: 0, z: 0}
   max: 0
-  ztrata: 0
+  smer: {x: 0, y: 0, z: 0}
+  poloha_ryby: {x: 0, y: 0, z: 0}
+  utok: 1
+  dosah: 0
 --- !u!212 &212237653161780884
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -94,7 +97,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 500, y: 500}
+  m_Size: {x: 83.333336, y: 83.333336}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

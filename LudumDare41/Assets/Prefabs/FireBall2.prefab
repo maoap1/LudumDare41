@@ -56,7 +56,7 @@ MonoBehaviour:
   max: 0
   smer: {x: 0, y: 0, z: 0}
   poloha_ryby: {x: 0, y: 0, z: 0}
-  utok: 0.01
+  utok: 0.015
   dosah: 0
 --- !u!212 &212190300533910752
 SpriteRenderer:

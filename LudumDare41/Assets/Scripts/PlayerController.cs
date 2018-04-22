@@ -28,10 +28,10 @@ public class PlayerController : MonoBehaviour
     public List<GameObject> points = new List<GameObject>();
     Vector3 pozice;
     public int pocet_ryb = 3;
-    public int objevovani_ryb = 6;
-    public int o_kolik_pocet = 1;
+    public float objevovani_ryb = 4;
+    public int o_kolik_pocet = 2;
     public int o_kolik_jidlo = 2;
-    public int o_kolik_objevonani = 2;
+    public float o_kolik_objevonani = 0.5f;
     public bool mrtvy;
     SpriteRenderer renderer;
     GameObject portal;
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     void Start ()
     {
         points.Add(pointPre);
-        text.text = "Food: " + jidlo.ToString();
+        text.text = jidlo.ToString();
         spawn = GameObject.Find("Spawner").GetComponent<Spawn>();
         portal = GameObject.Find("Portal");
 	}
@@ -88,11 +88,12 @@ public class PlayerController : MonoBehaviour
                     jidlo--;
                 }
             }
-            text.text = "Food: " + jidlo.ToString();
+            text.text = jidlo.ToString();
         }
         else
         {
-            if(wait)
+            
+            if (wait)
             {
                 spawn.pocet_ryb = pocet_ryb;
                 spawn.jak_rychle_za_sebou = objevovani_ryb;
@@ -102,8 +103,9 @@ public class PlayerController : MonoBehaviour
             }
             if (spawn.fishes.Count == 0 && spawn.vsechny)
             {
-                jidlo += o_kolik_jidlo;
+                jidlo += pocet_ryb;
                 pocet_ryb += o_kolik_pocet;
+                spawn.zivoty += 2.5f;
                 if (objevovani_ryb > o_kolik_objevonani) objevovani_ryb -= o_kolik_objevonani;
             }
         }

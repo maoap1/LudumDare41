@@ -8,7 +8,7 @@ public class Spawn : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        speed = 1;
+        speed = 5;
     }
 
     public GameObject fish;

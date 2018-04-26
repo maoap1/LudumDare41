@@ -8,7 +8,7 @@ public class Spawn : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        speed = 1;
+        speed = 5;
     }
 
     public GameObject fish;
@@ -38,7 +38,7 @@ public class Spawn : MonoBehaviour
     IEnumerator waiter()
     {
         Spawning = false;
-        yield return new WaitForSeconds(jak_rychle_za_sebou);
+        yield return new WaitForSeconds(jak_rychle_za_sebou/speed);
         pocet_ryb--;
         if (pocet_ryb != 0)
         {

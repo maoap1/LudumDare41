@@ -66,7 +66,7 @@ public class Fireball_Controller : MonoBehaviour
             {
                 utok = 0.015f * speed;
             }
-            if (vzdalenost.magnitude <= 2)
+            if (vzdalenost.magnitude <= speed)
             {
                 if (ryba != null)
                 {

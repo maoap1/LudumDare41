@@ -59,7 +59,7 @@ public class Follow : MonoBehaviour {
 
         Quaternion target = Quaternion.Euler(0, 0, o_kolik);
         
-        transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * 5.0f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * 5.0f * speed);
 
         
         

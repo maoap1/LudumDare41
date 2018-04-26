@@ -6,7 +6,7 @@ public class Tower_Controller : MonoBehaviour
 {
 
     public int dostrel = 200;
-    public int rychlost_strelby = 10;
+    public float rychlost_strelby = 10;
     private Spawn spawn;
     private List<GameObject> ryby;
     private Vector3 vzdalenost;
@@ -14,6 +14,7 @@ public class Tower_Controller : MonoBehaviour
     private Vector3 pozice;
     private bool strilej = true;
     public int posunuti;
+    public int speed;
 
     // Use this for initialization
     void Start()
@@ -24,12 +25,14 @@ public class Tower_Controller : MonoBehaviour
     IEnumerator waiter()
     {
         strilej = false;
-        yield return new WaitForSeconds(rychlost_strelby);
+        
+        yield return new WaitForSeconds(rychlost_strelby/speed);
         strilej = true;
     }
     // Update is called once per frame
     void Update()
     {
+        speed = GameObject.Find("Spawner").GetComponent<Spawn>().speed;
         if (strilej)
         rybolov();
     }

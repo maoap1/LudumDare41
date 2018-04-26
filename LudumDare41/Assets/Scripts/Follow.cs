@@ -9,8 +9,7 @@ public class Follow : MonoBehaviour {
     public Vector3 smer = new Vector3(0, 0, 0);
     private Quaternion rotace;
     public float pocet_zivotu = 10;
-
-    public int rychlost = 100;
+    public int speed;
 
     private Vector3 vzdalenost = new Vector3(0, 0, 0);
     private Vector3 vzdalenost_od_playera = new Vector3(0, 0, 0);
@@ -34,11 +33,12 @@ public class Follow : MonoBehaviour {
             vzdalenost = transform.position - kudy[kroky].transform.position;
             vzdalenost.z = 0;
             smer = Vector3.Normalize(vzdalenost);
-           
-            
-            transform.position -= smer;
 
-            if (vzdalenost.magnitude < 1)
+            speed = GameObject.Find("Spawner").GetComponent<Spawn>().speed;
+            
+            transform.position -= speed * smer;
+
+            if (vzdalenost.magnitude < 2)
             {
                 kroky++;
                 

@@ -14,6 +14,7 @@ public class Fireball_Controller : MonoBehaviour
     public float utok = 1;
     public int dosah = 350;
     bool palba;
+    public int speed;
 
     // Use this for initialization
     void Start()
@@ -42,8 +43,7 @@ public class Fireball_Controller : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    Vector3 otoceni = new Vector3(0,180,0);
+    
     // Update is called once per frame
     void Update()
     {
@@ -56,11 +56,17 @@ public class Fireball_Controller : MonoBehaviour
             vzdalenost = transform.position - poloha_ryby;
             vzdalenost.z = 0;
 
+           
+
             smer = Vector3.Normalize(vzdalenost);
 
-            transform.position -= 2 * smer;
-
-            if (vzdalenost.magnitude <= 1)
+            speed = GameObject.Find("Spawner").GetComponent<Spawn>().speed;
+            transform.position -= 2 * speed * smer;
+            if (utok < 1)
+            {
+                utok = 0.015f * speed;
+            }
+            if (vzdalenost.magnitude <= 2)
             {
                 if (ryba != null)
                 {

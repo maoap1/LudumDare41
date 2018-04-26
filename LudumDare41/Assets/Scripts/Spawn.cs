@@ -8,7 +8,7 @@ public class Spawn : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        speed = 1;
     }
 
     public GameObject fish;
@@ -19,6 +19,7 @@ public class Spawn : MonoBehaviour
     public bool Spawning = false;
     public bool vsechny = false;
     public float zivoty = 6;
+    public int speed = 1;
 
     // Update is called once per frame
     void Update()

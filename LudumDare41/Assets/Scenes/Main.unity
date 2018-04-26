@@ -476,6 +476,7 @@ MonoBehaviour:
   Spawning: 0
   vsechny: 0
   zivoty: 6
+  speed: 2
 --- !u!4 &484577179
 Transform:
   m_ObjectHideFlags: 0
